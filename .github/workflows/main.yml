@@ -2,7 +2,7 @@ name: SQL Pipeline
 on:
   push:
     paths:
-      - '/home/runner/work/rna-data-analysis/sql.py'
+      - '/sql.py'
 
 jobs:
   run_sql_script:
