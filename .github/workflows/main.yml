@@ -19,6 +19,8 @@ jobs:
       
       - name: Install MySQL client
         run: sudo apt-get update && sudo apt-get install -y mysql-client
+      - name: Install MySQL Python module
+        run: pip install mysql-connector-python
       
       - name: Run SQL script
         run: python sql.py
