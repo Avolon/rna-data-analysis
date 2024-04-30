@@ -1,0 +1,24 @@
+name: SQL Pipeline
+on:
+  push:
+    paths:
+      - 'sql.py'
+
+jobs:
+  run_sql_script:
+    name: Run SQL Script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Install MySQL client
+        run: sudo apt-get update && sudo apt-get install -y mysql-client
+      
+      - name: Run SQL script
+        run: python sql.py
